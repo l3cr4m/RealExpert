@@ -1,0 +1,2452 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,800,900|Roboto:100,400');
+@import "reset";
+@import "variables";
+@import "mixin";
+
+.nadpis{
+  display: block;
+  margin: 50px auto 0px auto;
+  width: 300px;
+  text-align: center;
+  @include font($raleway, 900, 25pt);
+}
+
+.button{
+  button{
+    padding: 20px 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: $yelow;
+    text-shadow: 0px 0px 8px grey;
+    box-shadow: 0px 3px $darkyelow;
+
+    @include font($raleway, 800, 20pt);
+    color: white;
+
+    &:hover{
+      box-shadow: 0px 3px $darkyelow;
+      margin-bottom: -3px;
+      cursor: pointer;
+    }
+
+    &:active{
+      box-shadow: 0px -3px $darkyelow;
+      margin-bottom: 0px;
+    }
+
+    &:focus{
+      outline: none;
+    }
+  }
+}
+
+.odkaz{
+  display: block;
+  width: 300px;
+  text-align: center;
+  margin: 50px auto;
+  a{ @include font($raleway, 900, 12pt); }
+}
+
+
+
+#content{
+  max-width: 1920px;
+  margin: 0 auto;
+  @include grid(1);
+  @include hover_a(0);
+
+  grid-template-areas:
+  "header"
+  "section"
+  "footer";
+
+  header{
+    grid-area: header;
+    @include grid(12);
+    //display: none !important;
+    //background: blue;
+    height: 120px;
+
+    @include mQ(1380px){
+      @include grid(10);
+
+      grid-template-areas:
+      ". logo up up up up up up up ."
+      ". logo nav nav nav nav nav nav nav .";
+    }
+
+    @include mQ(1170px){
+      @include grid(8);
+
+      grid-template-areas:
+      "logo up up up up up up up"
+      "logo nav nav nav nav nav nav nav";
+
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+
+    @include mQ(1050px){
+      @include grid(8);
+
+      grid-template-areas:
+      "logo . . . . . . up"
+      "nav nav nav nav nav nav nav nav";
+
+      .up{
+        margin-right: 60px;
+        margin-top: 20px;
+        width: 350px;
+        float: right;
+        display: block;
+        margin-bottom: 20px;
+
+        &>*{
+          display: block;
+          position: relative;
+          float: right;
+          height: 32px;
+
+        }
+
+
+        #phone{
+        }
+
+        #mail{
+        }
+
+        #search{
+        }
+      }
+
+      .hamburger{
+        margin-top: -55px;
+      }
+
+      .nab{
+        &>ul{
+          box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul{
+          li{
+            width: auto;
+          }
+        }
+      }
+    }
+
+    @include mQ(700px){
+      @include grid(2);
+
+      grid-template-areas:
+      "logo logo"
+      "up up"
+      "nav nav";
+
+      height: auto;
+
+      *{
+        text-align: center;
+      }
+
+      #logo, .up{
+        margin: 0 auto;
+        margin-top: 20px;
+      }
+
+      .up{
+        width: 310px;
+      }
+
+      #search{
+        margin-right: 15px;
+      }
+
+      #phone{
+        width: 105px;
+      }
+
+      .nab{
+        margin-top: 40px;
+      }
+
+      .nabidka{
+        li{
+          width: auto;
+
+        }
+      }
+
+      .hamburger{
+        margin-top: -12px;
+      }
+    }
+
+    @include mQ(560px){
+
+      width: auto;
+      height: 260px;
+
+      .up{
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #logo{
+        height: 70px;
+      }
+
+      .nab{
+        margin-top: 63px;
+
+          &>ul{
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+
+            li{
+
+              padding-left: auto;
+              padding-right: auto;
+            }
+          }
+      }
+
+      .hamburger{
+        width: 100%;
+        display: block;
+        margin-top: 15px;
+
+        *{
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+
+    @include mQ(440px){
+      margin: 0 auto;
+        width: 100%;
+
+        .up{
+          width: 300px;
+        }
+
+        .nab{
+          margin-left: auto;
+          margin-right: auto;
+          width: 100%;
+          *{
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+    }
+  }
+
+  section{
+    grid-area: section;
+    padding: 0px;
+    @include grid(1);
+  }
+
+  footer{
+    grid-area: footer;
+    grid-column-gap: 10px;
+    //display: none !important;
+    @include grid(12);
+    background: $red;
+    height: 50px;
+
+    @include mQ(1070px){
+      @include grid(12);
+
+      grid-template-areas: ". DEMO DEMO poski poski poski  poski poski poski poski poski .";
+    }
+
+    @include mQ(890px){
+      @include grid(12);
+
+      grid-template-areas: "DEMO DEMO poski poski poski  poski poski poski poski poski poski poski";
+    }
+
+    @include mQ(735px){
+      @include grid(1);
+
+      grid-template-areas:
+      "DEMO"
+      "poski";
+
+      height: 90px;
+      text-align: center;
+
+      .poski{
+        margin: 0 auto;
+
+        #poski{
+        }
+
+        #REAL{
+          width: 320px;
+        }
+      }
+    }
+
+    @include mQ(728px){
+
+      height: 135px;
+      text-align: center;
+
+      .poski{
+        height: 80px;
+        display: block;
+        width: 500px;
+      }
+
+      .DEMO{
+        height: 30px;
+      }
+
+      #poski{
+        height: 20px;
+        margin: 20 0;
+        margin-left: auto;
+        margin-right: auto;
+
+        div{
+          margin-top: -5px;
+        }
+      }
+
+      #REAL{
+        height: 20px;
+        margin: 0px;
+        padding: 0px;
+        margin-left: 100px;
+
+        div{
+          margin: 0px;
+          padding: 0px;
+        }
+
+        p{
+          width: auto;
+        }
+      }
+    }
+
+    @include mQ(520px){
+
+      height: 135px;
+
+      .poski{
+        height: 80px;
+        display: block;
+        width: 350px;
+        margin: 0px;
+        margin: 0 auto;
+      }
+
+      #REAL{
+        margin: 0px;
+        margin-left: 15px;
+      }
+    }
+
+    @include mQ(370px){
+
+      height: 135px;
+
+      .poski{
+        display: block;
+        width: 100%;
+        margin: 0px auto;
+      }
+
+      #REAL{
+        font-size: 7.5pt;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 260px !important;
+
+        div{
+          padding: 0px;
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+}
+
+header{
+  grid-template-areas:
+  ". . logo up up up up up up up  . ."
+  ". . logo nav nav nav nav nav nav nav . .";
+
+  #logo{
+    grid-area: logo;
+    //background: red;
+    margin-top: 15px;
+
+    a{
+      width: 100%;
+      height: 100%;
+
+      background-image: url(images/logo.png);
+      @include adjacent(171px, 84px, 100%);
+    }
+  }
+
+  .up{
+    grid-area: up;
+    display: flex;
+    //background: red;
+    height: 40px;
+    margin-top: 15px;
+    justify-content: flex-end;
+  }
+
+  nav{
+    grid-area: nav;
+    //background: red;
+    height: 30px;
+    margin-bottom: 10px;
+  }
+}
+
+.up{
+
+  &>div{
+      display: block;
+      margin: 0px 0px 0px 10px;
+      @include font($raleway, bold, 10.1pt);
+
+      a{
+        color: black;
+        text-decoration: none;
+        display: block;
+        margin: 12.5px 10px 0px 0px;
+      }
+  }
+
+  #mail{
+    width: 175px;
+
+    div{
+      background-image: url(images/mail.png);
+      @include adjacent(15px, 12px, 100%);
+      margin-right: 4px;
+      margin-top: 15px;
+
+      @include font($raleway, bold, 10.5pt);
+    }
+  }
+
+  #phone{
+    width: 120px;
+    font-family: sans-serif;
+    margin-top: 2px;
+
+    div{
+      //background: green;
+      background-image: url(images/phone1.png);
+      @include adjacent(12px, 11px, 100%);
+      margin-right: 4px;
+      margin-top: 15px;
+    }
+  }
+
+  #search{
+    display: block;
+    position: relative;
+    width: 275px;
+    margin-top: 5px;
+    border: solid 1px $lightgray;
+    //background: blue;
+
+    input{
+      width: 230px;
+      display: block;
+      position: relative;
+      float: left;
+      padding: 8px 0px 8px 10px;
+      border-radius: 5px 0px 0px 5px;
+      border: solid 0px $lightgray;
+    }
+
+    img{
+      display: block;
+      width: auto;
+      padding: 9px 5px 10px 10px;
+      border-radius: 0px 5px 5px 0px;
+    }
+  }
+}
+
+header nav{
+  .nab{
+    @include main-menu(flex-end, 100px, black, $red);
+    @include font($raleway, 700, 12pt);
+  }
+
+  li{
+    display: block;
+    margin-left: 15px;
+    min-width: 40px;
+  }
+
+  a{
+    padding-bottom: 20px;
+  }
+
+  .hamburger{
+      display: none;
+      position: relative;
+      float: right;
+      z-index: 2;
+      width: 40px;
+      height: 40px;
+      margin-top: -30px;
+      cursor: pointer;
+  }
+
+  .nabidka{
+    display: none;
+    position: absolute;
+    height: auto;
+    width: auto;
+    margin-top: 18px;
+    background: white;
+    z-index: 2;
+
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, .2);
+  }
+
+  & li:nth-child(6){
+
+    &:hover{
+      .nabidka{
+        display: block;
+
+        ul{
+          padding: 0px;
+        }
+
+        li{
+          width: 100%;
+
+          margin: 20px 20px;
+          @include font($roboco, 400, 11pt);
+        }
+
+        img{
+          margin: 0px 0px 0px 40px;
+        }
+
+        a{
+          &:hover{ color: $blue2; }
+          &:active{ color: $grey5; }
+        }
+      }
+    }
+  }
+
+
+  @include mQ(1050px){
+    width: 100%;
+    display: block;
+    z-index: 2;
+
+    .hamburger{
+      display: block;
+
+      .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+      }
+    }
+    .hamburger-close{
+      display: block;
+      margin-top: -30px;
+
+      /* Rotate first bar */
+      .bar1 {
+          -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+          transform: rotate(-45deg) translate(-9px, 6px) ;
+      }
+
+      /* Fade out the second bar */
+      .bar2 {
+          opacity: 0;
+      }
+
+      /* Rotate last bar */
+      .bar3 {
+          -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+          transform: rotate(45deg) translate(-8px, -8px) ;
+      }
+    }
+
+    .nab{
+      background: white;
+      margin-top: 21px;
+      margin-left: -50px;
+      margin-right: -50px;
+      border-top: solid $whitegrey2 1px;
+      display: none;
+
+      ul{
+        width: 100%;
+        display: block;
+        margin: 0px;
+        padding: 0px;
+      }
+
+      li{
+        margin: 0px;
+
+        a{
+          display: block;
+          padding: 10px 30px;
+        }
+      }
+
+      li:hover{
+        background: $whitegrey;
+      }
+
+      & li:nth-child(6){
+        &:hover{
+          margin: 0px;
+          padding: 0px;
+
+          .nabidka{
+            position: relative;
+            display: block;
+            margin-top: 0px;
+            box-shadow: 0px 0px 0;
+
+            img{
+              display: none;
+            }
+
+            li{
+              margin: 0px;
+              padding: 0px;
+              padding-left: 15px;
+            }
+          }
+        }
+      }
+    }
+    .nab-close{
+      display: block;
+    }
+
+
+  }
+}
+
+
+
+
+
+section{
+  grid-template-areas:
+  "billboard-container"
+  "hledani"
+  "sluzby"
+  "faq"
+  "chci"
+  "poptavka"
+  "news"
+  "down";
+
+  .billboard-container{
+    //display: none !important;
+    grid-area: billboard-container;
+    background: $whitegrey;
+  }
+
+  .hledani{
+    //display: none !important;
+    grid-area: hledani;
+    @include grid(12);
+    background: $whitegrey;
+    padding-bottom: 30px;
+    grid-gap: 20px;
+
+    @include mQ(1600px){
+      @include grid(10);
+
+      grid-template-areas:
+      ". hled hled hled hled hled hled hled hled .";
+
+      .nabidka{
+        padding: 0 1.19%;
+      }
+    }
+
+    @include mQ(1300px){
+      @include grid(8);
+
+      grid-template-areas:
+      "hled hled hled hled hled hled hled hled";
+
+
+      grid-gap: 0px;
+
+      #hledani{
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .nabidka{
+        padding: 0 2.5%;
+      }
+    }
+
+    @include mQ(700px){
+      #hledani{
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+    }
+
+    @include mQ(560px){
+      @include grid(1);
+
+      grid-template-areas:
+      "hled";
+
+      nav{
+        width: 100%;
+      }
+    }
+  }
+
+  .sluzby{
+    //display: none !important;
+    grid-area: sluzby;
+    @include grid(1);
+    display: block;
+    background: $whitegrey;
+  }
+
+  .faq{
+    grid-area: faq;
+    @include grid(1);
+    //display: none !important;
+  }
+
+  .chci{
+    grid-area: chci;
+    @include grid(1);
+    //display: none !important;
+  }
+
+  .poptavka{
+    //display: none !important;
+    grid-area: poptavka;
+    background: $whitegrey;
+    @include grid(12);
+    height: auto;
+    padding-top: 100px;
+
+    @include mQ(1300px){
+        @include grid(1);
+
+        grid-template-areas:
+        "popt";
+
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+
+    @include mQ(760px){
+
+        &>div{
+          padding: 0px 50px;
+        }
+
+        /* position outside */
+        .flickity-prev-next-button.previous {
+          display: none;
+        }
+        .flickity-prev-next-button.next {
+          display: none
+        }
+
+    }
+
+    @include mQ(540px){
+        padding-left: 0px;
+        padding-right: 0px;
+
+        h3{
+          font-size: 20pt;
+        }
+    }
+
+    @include mQ(420px){
+      &>div{
+        padding: 0px 5px;
+      }
+    }
+
+    @include mQ(330px){
+      &>div{
+        padding: 0px 0px;
+
+      }
+    }
+  }
+
+  .news{
+    grid-area: news;
+    //display: none !important;
+    background: $whitegrey;
+    @include grid(1);
+  }
+
+  .down{
+    grid-area: down;
+    //display: none !important;
+    background: $grey;
+    @include grid(12);
+    grid-gap: 25px;
+    a, li, p{ color: white; }
+
+    @include mQ(1100px){
+      @include grid(8);
+
+      grid-template-areas:
+      "nav2 nav2 nav2 nav2 nav2 nav2 nav2 nav2"
+      ". adresa adresa phone2 phone2 email email .";
+    }
+
+    @include mQ(800px){
+      @include grid(4);
+
+      grid-template-areas:
+      ". adresa nav2 ."
+      ". phone2 nav2 ."
+      ". email nav2 .";
+
+      grid-gap: 0px;
+      padding-top: 10px;
+
+      nav{
+        width: 50px;
+        margin-left: 40px;
+        margin-top: 0px;
+        float: right;
+        display: block;
+        border-bottom: 0px;
+
+        ul{
+          display: block;
+          width: 100px;
+
+          li{
+            position: relative;
+            float: left;
+            width: 100px;
+            margin: 7px 0px 7px 0px;
+          }
+        }
+      }
+
+    }
+
+    @include mQ(560px){
+      @include grid(3);
+
+      grid-template-areas:
+      ". nav2 ."
+      ". nav2 ."
+      ". nav2 ."
+      ". adresa ."
+      ". phone2 ."
+      ". email .";
+
+      nav{
+        margin: 0;
+        width: auto;
+        margin-bottom: 20px;
+
+        ul{
+        text-align: center;
+        }
+      }
+
+      #adresa{
+        width: 200px
+      }
+
+      #phone2{
+        width: 200px;
+      }
+
+      #emal{
+        width: 200px;
+      }
+    }
+  }
+}
+
+
+.billboard{
+  //display: none !important;
+  .hlavni-nadpis{
+    position: absolute;
+    text-align: right;
+    color: white;
+    z-index: 1;
+
+    left: 50%;
+    top: 150px;
+
+    h1{
+      @include font($raleway, 200, 35pt);
+    }
+
+    span{
+      @include font($raleway, 900, 40pt);
+    }
+
+    p{
+      padding-top: 0px;
+      @include font($raleway, 200, 14pt);
+    }
+
+    .button{
+      margin-top: 80px;
+
+      button{
+        @include font($raleway, 900, 16pt);
+      }
+    }
+
+    background-color: none;
+
+    @include mQ(1250px){
+      left: auto;
+      right: 100px;
+    }
+
+    @include mQ(1038px){
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      display: block;
+      left: 0;
+      top: 150px;
+    }
+
+    @include mQ(700px){
+      top: 230px;
+
+    @include mQ(560px){
+      top: 330px;
+
+      h1{
+        @include font($raleway, 200, 30pt);
+      }
+
+      span{
+        @include font($raleway, 900, 35pt);
+      }
+
+      p{
+        padding-top: 0px;
+        @include font($raleway, 200, 14pt);
+      }
+
+      .button{
+        margin-top: 40px;
+
+        button{
+          @include font($raleway, 900, 16pt);
+          }
+        }
+      }
+
+    @include mQ(500px){
+        top: 330px;
+
+        h1{
+          @include font($raleway, 200, 25pt);
+        }
+
+        span{
+          @include font($raleway, 900, 30pt);
+        }
+
+        p{
+          padding-top: 0px;
+          @include font($raleway, 200, 14pt);
+        }
+
+        .button{
+          margin-top: 40px;
+
+          button{
+            @include font($raleway, 900, 16pt);
+            }
+          }
+        }
+
+      @include mQ(400px){
+          top: 370px;
+
+          h1{
+            @include font($raleway, 200, 18pt);
+          }
+
+          span{
+            @include font($raleway, 900, 25pt);
+          }
+
+          p{
+            padding-top: 0px;
+            @include font($raleway, 200, 14pt);
+          }
+
+          .button{
+            margin-top: 40px;
+
+            button{
+              padding: 10px 20px;
+              @include font($raleway, 900, 14pt);
+            }
+          }
+        }
+    }
+  }
+
+
+
+  .billboard-container{
+
+    .carousel-cell{
+      background-image: url(images/billboard0.jpg);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: 100%;
+      height: 700px;
+      display: block;
+    }
+
+    @include mQ(1580px){
+      .carousel-cell{
+        background-image: url(images/billboard0M.jpg);
+        width: 1562px;
+      }
+    }
+
+    @include mQ(1038px){
+      .carousel-cell{
+        background-image: url(images/billboard0M.jpg);
+        width: 2000px;
+        height: 750px;
+      }
+    }
+
+    @include mQ(700px){
+      margin-top: 0px;
+      .carousel-cell{
+        background-image: url(images/billboard0M.jpg);
+        width: 1278px;
+      }
+    }
+
+    @include mQ(500px){
+      .flickity-prev-next-button.previous {
+        display: none;
+      }
+      .flickity-prev-next-button.next {
+        display: none;
+      }
+    }
+
+
+
+
+      /* smaller, dark, rounded square */
+    .flickity-button {
+      background: white;
+    }
+    .flickity-button:hover {
+      background: $whitegrey;
+    }
+
+    .flickity-prev-next-button {
+      width: 60px;
+      height: 60px;
+      border-radius: 0px;
+    }
+    /* icon color */
+    .flickity-button-icon {
+      fill: $grey6;
+    }
+    /* position outside */
+    .flickity-prev-next-button.previous {
+      left: 0px;
+      top: 250px;
+      z-index: 2;
+    }
+    .flickity-prev-next-button.next {
+      right: 0px;
+      top: 250px;
+      z-index: 2;
+    }
+
+
+
+      /* position dots in carousel */
+    .flickity-page-dots {
+      bottom: 290px;
+    }
+    /* white circles */
+    .flickity-page-dots .dot {
+      width: 12px;
+      height: 12px;
+      opacity: 1;
+      background: transparent;
+      border: 3px solid white;
+    }
+    /* fill-in selected dot */
+    .flickity-page-dots .dot.is-selected {
+      background: $yelow;
+    }
+
+    .flickity-page-dots .dot{
+      background: $red;
+    }
+  }
+}
+
+
+
+.hledani{
+  grid-template-areas:
+  ". . hled hled hled hled hled hled hled hled . .";
+
+  #hledani{
+    grid-area: hled;
+    @include grid(4, 3);
+    background: $white2;
+    margin-top: -250px;
+    z-index: 1;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+
+
+    @include mQ(1038px){
+      margin-top: -266px;
+    }
+  }
+}
+
+#hledani{
+  grid-template-areas:
+  "nav2 nav2 nav2 nav2"
+  "hled hled hled hled"
+  "hled hled hled hled";
+
+  nav{
+    grid-area: nav2;
+    background: $red;
+
+    ul{
+      @include grid(6);
+
+      padding: 0px;
+      margin: 0px;
+
+      @include mQ(1038px){
+        @include grid(3);
+
+        grid-template-areas:
+          "area1 area2 area3"
+          "area4 area5 area6";
+
+        .nabidka{
+            width: 26.8%;
+        }
+      }
+
+      @include mQ(800px){
+        .nabidka{
+            width: 26.6%;
+        }
+      }
+
+      @include mQ(700px){
+        @include grid(2);
+
+        grid-template-areas:
+          "area1 area2"
+          "area3 area4"
+          "area5 area6";
+
+          .nabidka{
+              width: 45%;
+              z-index: 1;
+          }
+        }
+
+      @include mQ(428px){
+        @include grid(1);
+
+        grid-template-areas:
+          "area1"
+          "area2"
+          "area3"
+          "area4"
+          "area5"
+          "area6";
+
+        .nabidka{
+            width: 95%;
+        }
+      }
+    }
+  }
+
+  .hled{
+    grid-area: hled;
+    height: auto;
+
+    @include mQ(450px){
+      .img{
+        display: none;
+      }
+    }
+  }
+}
+
+.hled{
+  @include grid(4);
+  grid-template-areas:
+  "hleda img img img"
+  "hleda img img img";
+
+  &>*{
+    margin-top: 50px;
+    margin-left: 90px;
+  }
+
+  .img{
+    grid-area: img;
+    float: right;
+    display: block;
+    margin: 0 auto;
+    margin-top: 70px;
+
+    img{
+      display: block;
+    }
+  }
+
+  .hledani1{
+    grid-template-areas: hleda;
+    width: 450px;
+    display: block;
+    position: relative;
+    float: left;
+
+    img{
+      float: left;
+      margin-top: 40px;
+      margin-right: 15px;
+      max-width: 30px;
+    }
+
+    h3{
+      @include font($raleway, 200, 25pt);
+    }
+
+    span{
+      font-weight: 900;
+    }
+
+    p{
+      @include font($raleway, 200, 15pt);
+      margin: -25px 0px 0px 50px;
+    }
+
+
+    @include mQ(570px){
+      margin: 0 auto;
+      width: 385px;
+      margin-top: 50px;
+      margin: 0 auto;
+
+      .img{
+        margin-left: 20px;
+        img{
+          width: 25px;
+        }
+      }
+
+      h3{
+        @include font($raleway, 200, 20pt);
+        margin-top: 35px;
+      }
+
+      p{
+        @include font($raleway, 200, 11pt);
+      }
+    }
+
+
+    @include mQ(428px){
+      @include grid(1);
+      width: 270px !important;
+      display: block;
+
+      .img{
+        margin-left: 0px;
+        img{
+          width: 15px;
+        }
+      }
+
+      h3{
+        @include font($raleway, 200, 15pt);
+        margin-top: 40px;
+      }
+
+      p{
+        @include font($raleway, 200, 11pt);
+      }
+    }
+  }
+
+  &>div:nth-child(1){
+    width: 380px;
+    padding-bottom: 40px;
+    border-bottom: 1px $grey3 solid;
+  }
+
+  &>div:nth-child(2){
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+
+
+  @include mQ(1040px){
+    @include grid(1);
+    grid-template-areas:
+    "hleda"
+    "hleda"
+    "img";
+  }
+}
+
+#hledani nav{
+  grid-template-areas:
+  "area1 area2 area3 area4 area5 area6";
+
+  text-align: center;
+
+  li{
+    padding: 10px 0px 0px 0px;
+    list-style-type: none;
+    max-width: auto;
+
+    a{
+      text-decoration: none;
+      color: white;
+      @include font($raleway, 400, 12pt);
+
+      &:hover{
+        @include font($raleway, 700, 12pt);
+      }
+    }
+
+    p{
+      margin-top: 0px;
+      display: block;
+      padding-top: 80px;
+
+      background-repeat: no-repeat;
+      background-position: top;
+    }
+  }
+
+  .nabidka{
+    display: none;
+    position: absolute;
+    background: $whitegrey2;
+    min-width: 10.92%;
+    height: auto;
+    padding-bottom: 30px;
+  }
+
+  li:last-child:hover{
+
+    background: $whitegrey2;
+
+    p{
+      background-image: url(images/ostatni2.png);
+      background-repeat: no-repeat;
+      background-position: top;
+      color: black;
+    }
+
+    .nabidka{
+      display: block;
+
+      ul{
+        margin: 0 auto;
+        margin-top: -10px;
+        display: block;
+        width: 115px;
+      }
+
+      a{
+      text-align: center;
+        color: $grey5;
+
+        &:hover{
+          color:black;
+        }
+
+        &:active{
+          color: $grey5;
+        }
+      }
+    }
+  }
+
+  ul li:nth-child(1){ grid: area1; p{ background-image: url(images/domy.png); }}
+  ul li:nth-child(2){ grid: area2; p{ background-image: url(images/byty.png); }}
+  ul li:nth-child(3){ grid: area3; p{ background-image: url(images/chaty.png); }}
+  ul li:nth-child(4){ grid: area4; p{ background-image: url(images/pozemky.png); }}
+  ul li:nth-child(5){ grid: area5; p{ background-image: url(images/komerce.png); }}
+  ul li:nth-child(6){ grid: area6; p{ background-image: url(images/ostatni.png); }}
+
+}
+
+
+
+.sluzby{
+  grid-template-areas:
+  "nadpis6"
+  "list"
+  "naceneni";
+
+  .nadpis{ grid-area: nadpis6; }
+
+  #list{
+    grid-area: obsah;
+    @include grid(12);
+    margin-bottom: -120px;
+
+    @include mQ(1600px){
+      @include grid(10);
+
+      grid-template-areas:
+      ". clanek21 clanek21 clanek21 clanek21 clanek24 clanek24 clanek24 clanek24 ."
+      ". clanek22 clanek22 clanek22 clanek22 clanek25 clanek25 clanek25 clanek25 ."
+      ". clanek23 clanek23 clanek23 clanek23 clanek26 clanek26 clanek26 clanek26 ."
+      ". photo photo photo photo photo photo photo photo .";
+    }
+
+    @include mQ(1300px){
+      @include grid(2);
+
+      grid-template-areas:
+      "clanek21 clanek24"
+      "clanek22 clanek25"
+      "clanek23 clanek26"
+      "photo photo";
+
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    @include mQ(800px){
+      @include grid(2);
+
+      grid-template-areas:
+      "clanek21 clanek21"
+      "clanek24 clanek24"
+      "clanek22 clanek22"
+      "clanek25 clanek25"
+      "clanek23 clanek23"
+      "clanek26 clanek26"
+      "photo photo";
+
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    @include mQ(560px){
+      margin: 0px;
+    }
+
+    @include mQ(460px){
+
+
+    }
+  }
+}
+
+#list{
+  grid-template-areas:
+  ". . clanek21 clanek21 clanek21 clanek21 clanek24 clanek24 clanek24 clanek24 . ."
+  ". . clanek22 clanek22 clanek22 clanek22 clanek25 clanek25 clanek25 clanek25 . ."
+  ". . clanek23 clanek23 clanek23 clanek23 clanek26 clanek26 clanek26 clanek26 . ."
+  ". . photo photo photo photo photo photo photo photo . .";
+
+  .clanek{
+    background: white;
+    padding: 20px;
+    padding-top: 30px;
+    border: 2px solid $grey4;
+
+    @include hover_a(1);
+    a{ color: $red; }
+
+    @include title_text(auto, $raleway, 900, 14pt, $red, 0px, $raleway, regular, 13pt, $grey2, 20px 0px 0px 0px);
+
+    &>div:nth-child(1) {
+       @include adjacent(100px, 100px, 100%);
+       margin-right: 15px;
+       margin-bottom: 10px;
+       margin-top: 5px;
+    }
+
+    &>div:nth-child(2){
+      display: block;
+
+      div{
+        width: 95px;
+        border-bottom: solid 1px $grey;
+        margin: 10px 0px 0px 115px;
+      }
+    }
+
+
+  }
+
+  & div:nth-child(1){ grid-area: clanek21; &>div:nth-child(1){ background-image: url(images/reference.png); }}
+  & div:nth-child(2){ grid-area: clanek22; &>div:nth-child(1){ background-image: url(images/prodané.png); }}
+  & div:nth-child(3){ grid-area: clanek23; &>div:nth-child(1){ background-image: url(images/dotazy.png); }}
+  & div:nth-child(4){ grid-area: clanek24; &>div:nth-child(1){ background-image: url(images/služby.png); }}
+  & div:nth-child(5){ grid-area: clanek25; &>div:nth-child(1){ background-image: url(images/rady.png); }}
+  & div:nth-child(6){ grid-area: clanek26; &>div:nth-child(1){ background-image: url(images/expert.png); }}
+
+  .naceneni{
+    grid-area: photo;
+    display: block;
+    color: white;
+    @include adjacent(auto, 381px, 100%);
+    background-image: url(images/billboard1.jpg);
+
+    padding: 20px;
+    padding-left: 120px;
+    //box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+
+    @include mQ(1090px){
+      background-image: url("images/billboard1M.jpg");
+      position: relative;
+      display: block;
+
+      .nadpis{
+        position: relative;
+        float: left;
+        margin: 0px;
+        padding: 0px;
+        margin-right: 20px;
+        text-align: left;
+        width: auto;
+      }
+
+      .text{
+        width: 230px;
+
+        p{
+          @include font($raleway, regulare, 12pt);
+        }
+
+        position: relative;
+        display: block;
+        float: left;
+        margin: 0px;
+        padding: 0px;
+        margin-top: 10px;
+      }
+
+      .button{
+        position: relative;
+        display: block;
+        width: 100%;
+        float: left;
+      }
+    }
+
+    @include mQ(915px){
+      background-size: 915px;
+    }
+
+    @include mQ(700px){
+      width: auto;
+      padding: 0px;
+
+      button{
+        display: block;
+        margin:  0 auto;
+
+        margin-top: 15px;
+      }
+
+      .text{
+        width: 100%;
+        p{
+          display: block;
+          margin:  0 auto;
+          width: 400px;
+          text-align: center;
+
+          margin-top: 5px;
+        }
+      }
+
+      .nadpis{
+
+        display: block;
+        width: 100%;
+
+        h3{
+          margin:  0 auto;
+          width: 180px;
+          text-align: center;
+
+          margin-top: 20px;
+        }
+      }
+    }
+
+    @include mQ(460px){
+
+      background-size: 1025px;
+
+      .text{
+        p{
+          width: 280px;
+        }
+      }
+
+      .button{
+        button{
+          width: 280px;
+
+          font-size: 18pt;
+
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+}
+
+.naceneni{
+  .nadpis{
+    margin-left: 0px;
+  }
+
+  *>div{
+    display: block;
+  }
+
+  h3{
+    display: block;
+    text-align: left;
+    line-height: 30px;
+
+                       @include font($raleway, 200, 18pt);
+    span:nth-child(2){ @include font($raleway, 900, 43pt); }
+    span:nth-child(4){ @include font($raleway, 700, 22pt); }
+  }
+
+  p{
+    @include font($raleway, regulare, 10pt);
+  }
+
+  button{
+    padding: 15px 80px;
+  }
+}
+
+
+
+.faq{
+  grid-template-areas:
+  "nadpis5"
+  "obsah"
+  "odkaz2";
+
+  .nadpis{
+    grid-area: nadpis5;
+    margin-top: 180px;
+
+    @include mQ(1600px){
+      margin-top: 100px;
+    }
+  }
+
+  #obsah{
+    grid-area: obsah;
+    @include grid(12);
+    grid-column-gap: 50px;
+    margin: 0 auto;
+    margin-top: -40px;
+
+    @include mQ(1600px){
+      @include grid(10);
+
+      grid-template-areas:
+      ". prvninadpis prvninadpis prvninadpis prvninadpis druhynadpis druhynadpis druhynadpis druhynadpis ."
+      ". clanek1 clanek1 clanek1 clanek1 clanek4 clanek4 clanek4 clanek4 ."
+      ". clanek2 clanek2 clanek2 clanek2 clanek5 clanek5 clanek5 clanek5 ."
+      ". clanek3 clanek3 clanek3 clanek3 clanek6 clanek6 clanek6 clanek6 .";
+    }
+
+    @include mQ(1320px){
+      @include grid(2);
+
+      grid-template-areas:
+      "prvninadpis druhynadpis"
+      "clanek1 clanek4"
+      "clanek2 clanek5"
+      "clanek3 clanek6";
+
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    @include mQ(1070px){
+      @include grid(5);
+
+      grid-template-areas:
+      ". prvninadpis prvninadpis prvninadpis ."
+      ". clanek1 clanek1 clanek1 ."
+      ". clanek2 clanek2 clanek2 ."
+      ". clanek3 clanek3 clanek3 ."
+      ". druhynadpis druhynadpis druhynadpis ."
+      ". clanek4 clanek4 clanek4 ."
+      ". clanek5 clanek5 clanek5 ."
+      ". clanek6 clanek6 clanek6 .";
+
+      .clanek>div:nth-child(1) {
+         min-height: 165px;
+      }
+    }
+
+    @include mQ(720px){
+      @include grid(3);
+
+      grid-template-areas:
+      "prvninadpis prvninadpis prvninadpis"
+      "clanek1 clanek1 clanek1"
+      "clanek2 clanek2 clanek2"
+      "clanek3 clanek3 clanek3"
+      "druhynadpis druhynadpis druhynadpis"
+      "clanek4 clanek4 clanek4"
+      "clanek5 clanek5 clanek5"
+      "clanek6 clanek6 clanek6";
+    }
+
+    @include mQ(413px){
+      .clanek>div:nth-child(1) {
+         min-height: 70px;
+      }
+
+
+      .clanek h5{
+        font-size: 14pt;
+      }
+    }
+  }
+
+  .odkaz{
+    grid-area: odkaz2;
+    margin-top: 0px;
+
+    a{ color: $red; }
+  }
+}
+
+#obsah{
+  grid-template-areas:
+  ". . prvninadpis prvninadpis prvninadpis prvninadpis druhynadpis druhynadpis druhynadpis druhynadpis . ."
+  ". . clanek1 clanek1 clanek1 clanek1 clanek4 clanek4 clanek4 clanek4 . ."
+  ". . clanek2 clanek2 clanek2 clanek2 clanek5 clanek5 clanek5 clanek5 . ."
+  ". . clanek3 clanek3 clanek3 clanek3 clanek6 clanek6 clanek6 clanek6 . .";
+
+  .clanek{
+    margin: 15px 0px;
+    height: auto !important;
+
+    @include title_text(150px, $raleway, 200, 16pt, $red, 0px, $raleway, regular, 12pt, $grey2, 20px 0px 0px 0px);
+
+    &>div:nth-child(1) {
+       @include adjacent(50px, 50px, 100%);
+       min-height: 120px;
+       display: block;
+       margin-right: 15px;
+       margin-top: 0px;
+    }
+
+    &>div:nth-child(2){
+      display: block;
+
+      div{
+        display: block;
+        width: 95px;
+        border-bottom: solid 1px $grey;
+        margin: 5px 0px 0px 65px;
+      }
+    }
+  }
+
+  h4{ @include font($raleway, 800, 14pt);  margin-bottom: 15px; margin-top: 40px; text-align: center;}
+
+  & h4:nth-child(1){ grid-area: prvninadpis; }
+  & h4:nth-child(2){ grid-area: druhynadpis; }
+
+  & div:nth-child(3){ grid-area: clanek1; &>div:nth-child(1){ background-image: url(images/1.png); }}
+  & div:nth-child(4){ grid-area: clanek2; &>div:nth-child(1){ background-image: url(images/2.png); }}
+  & div:nth-child(5){ grid-area: clanek3; &>div:nth-child(1){ background-image: url(images/3.png); }}
+  & div:nth-child(6){ grid-area: clanek4; &>div:nth-child(1){ background-image: url(images/1.png); }}
+  & div:nth-child(7){ grid-area: clanek5; &>div:nth-child(1){ background-image: url(images/2.png); }}
+  & div:nth-child(8){ grid-area: clanek6; &>div:nth-child(1){ background-image: url(images/3.png); }}
+}
+
+
+
+.chci{
+  grid-template-areas:
+  "proc"
+  "nabor";
+
+  #proc{
+    grid-area: proc;
+    background: $whitegrey;
+    @include grid(8);
+    grid-gap: 20px;
+    text-align: center;
+    padding-bottom: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @include mQ(1067px){
+      @include grid(4);
+
+      grid-template-areas:
+      "nadpis3 nadpis3 nadpis3 nadpis3"
+      ". jsme serveru ."
+      ". spokojenych prodanych .";
+
+
+      padding-bottom: 120px;
+    }
+
+    @include mQ(600px){
+      @include grid(3);
+
+      grid-template-areas:
+      "nadpis3 nadpis3 nadpis3"
+      ". jsme ."
+      ". serveru ."
+      ". spokojenych ."
+      ". prodanych .";
+
+    }
+  }
+
+  #nabor{
+    grid-area: nabor;
+    background: $white;
+    @include grid(10, 2);
+    height: 480px;
+
+    @include mQ(1600px){
+      @include grid(10, 2);
+
+      grid-template:
+      ". woman woman woman woman woman woman for ."
+      ". woman woman woman woman woman woman for .";
+    }
+
+    @include mQ(1200px){
+      @include grid(10, 2);
+
+      grid-template:
+      ". woman woman woman woman woman woman woman ."
+      ". woman woman woman woman woman woman woman .";
+
+      .for{
+        display: none;
+      }
+    }
+
+    @include mQ(980px){
+      @include grid(1);
+
+      grid-template:
+      "woman";
+
+      .woman{
+        background-image: url();
+        text-align: center;
+      }
+    }
+
+    @include mQ(500px){
+      margin-bottom: 70px;
+      height: 300px;
+
+      .button{
+        button{
+           font-size: 15pt;
+        }
+      }
+    }
+
+    @include mQ(400px){
+
+      .button{
+        button{
+           font-size: 15pt;
+           padding-left: 20px;
+           padding-right: 20px;
+        }
+      }
+    }
+  }
+}
+
+#proc{
+  grid-template-areas:
+  "nadpis3 nadpis3 nadpis3 nadpis3 nadpis3 nadpis3 nadpis3 nadpis3"
+  ". . jsme serveru spokojenych prodanych . .";
+
+  *{ margin: 0px;;}
+
+  &>div{ width: 220px; }
+
+  p{ @include font($roboco, 100, 50pt); margin: 0 20px;}
+
+  span{ @include font($roboco, 100, 20pt); }
+
+  h4{ @include font($raleway, 900, 13pt); color: $blue; margin-top: 15px; }
+
+  .nadpis{
+    grid-area: nadpis3;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .jsme{ grid-area: jsme; }
+  .serveru{ grid-area: serveru; }
+  .spokojenych{ grid-area: spokojenych; }
+  .prodanych{ grid-area: prodanych; }
+}
+
+#nabor{
+  grid-template:
+  ". . woman woman woman woman woman for . ."
+  ". . woman woman woman woman woman for . .";
+
+  .button{ grid-area: button1; }
+
+  .woman{
+    grid-area: woman;
+    max-width: auto;
+    display: block;
+    z-index: 5;
+    margin-top: -120px;
+
+
+
+    background-image: url(images/woman.png);
+    background-repeat: no-repeat;
+    background-position: right;
+
+
+    .nadpis2{
+      grid-area: nadpis4;
+      color: $grey3;
+      padding-top: 140px;
+
+
+      h3{ @include font($raleway, normal, 40pt); margin-bottom: -30px;}
+
+      span{ @include font($raleway, 900, 50pt); }
+
+      p{ @include font($raleway, normal, 20pt); }
+    }
+
+    @include mQ(1350px){
+      padding-top: 40px;
+
+      .nadpis2{
+        h3{ @include font($raleway, normal, 30pt); }
+
+        span{ @include font($raleway, 900, 45pt); }
+
+        p{ @include font($raleway, normal, 15pt); padding-top: 15px;}
+      }
+    }
+
+    @include mQ(1200px){
+      padding-top: 40px;
+
+      .nadpis2{
+        h3{ @include font($raleway, normal, 40pt); margin-bottom: -30px;}
+
+        span{ @include font($raleway, 900, 50pt); }
+
+        p{ @include font($raleway, normal, 20pt); }
+      }
+    }
+
+    @include mQ(1100px){
+      .nadpis2{
+        h3{ @include font($raleway, normal, 30pt); }
+
+        span{ @include font($raleway, 900, 45pt); }
+
+        p{ @include font($raleway, normal, 15pt); padding-top: 15px;}
+      }
+    }
+
+    @include mQ(500px){
+      .nadpis2{
+        h3{ @include font($raleway, normal, 20pt); }
+
+        span{ @include font($raleway, 900, 35pt); }
+
+        p{ @include font($raleway, normal, 15pt); padding-top: 15px;}
+      }
+    }
+
+    @include mQ(400px){
+      .nadpis2{
+        h3{ @include font($raleway, normal, 15pt); }
+
+        span{ @include font($raleway, 900, 30pt); }
+
+        p{ @include font($raleway, normal, 15pt); padding-top: 15px;}
+      }
+    }
+  }
+
+  .for{
+    grid-area: for;
+    color: $blue;
+    margin-top: 40px;
+    text-align: left;
+
+    p{
+      @include font($raleway, 300, 18pt);
+      transform: rotate(12deg);
+      margin-top: 60px;
+    }
+
+    span{ @include font($raleway, 800, 18pt); }
+  }
+}
+
+
+
+.poptavka{
+  grid-template-areas:
+  ". . popt popt popt popt popt popt popt popt . .";
+
+  &>div{
+    grid-area: popt;
+    background: $red;
+    margin: auto 0px;
+    padding: 0px 150px;
+    @include grid(1);
+
+    grid-template-areas:
+    "nadpis7"
+    "client-container"
+    "vice3";
+
+    .nadpis, h3{
+      grid-area: nadpis7;
+      color: white;
+      margin: 15px 0px;
+      padding: 0px;
+      width: 100%;
+    }
+
+    .client-container{
+      grid-area: client-container;
+
+      .carousel-cell{
+        background: white;
+        margin: 0px 5px;
+        padding: 10px 20px;
+        width: 230px;
+
+        @include font($raleway, 400, 12pt);
+
+        p:last-child{ margin-top: 20px; }
+      }
+
+      /* no circle */
+      .flickity-button {
+        background: transparent;
+      }
+      /* big previous & next buttons */
+      .flickity-prev-next-button {
+        width: 70px;
+        height: 70px;
+      }
+      /* icon color */
+      .flickity-button-icon {
+        fill: white;
+      }
+      /* hide disabled button */
+      .flickity-button:disabled {
+        display: none;
+      }
+
+      /* position outside */
+      .flickity-prev-next-button.previous {
+        left: -100px;
+      }
+      .flickity-prev-next-button.next {
+        right: -100px;
+      }
+    }
+
+    .odkaz{
+      grid-area: vice3;
+      color: white;
+      margin: 30px auto;
+      margin-bottom: 40px;
+
+      a{
+        color: white;
+      }
+    }
+  }
+}
+
+
+
+.news{
+  grid-template-areas:
+  "nadpis2"
+  "news2"
+  "vice";
+
+  a{ color: $red; }
+
+  .nadpis{
+    grid-area: nadpis2;
+    padding-top: 0px;
+  }
+
+  #news{
+    grid-area: news2;
+    display: grid;
+    @include grid(8);
+
+    @include mQ(1300px){
+      @include grid(3);
+
+      grid-template-areas:
+      "clanek1 clanek2 clanek3";
+
+      margin: 0 20px;
+    }
+
+    @include mQ(900px){
+      @include grid(1);
+
+      grid-template-areas:
+      "clanek1"
+      "clanek2"
+      "clanek3";
+
+      margin: 0 20px;
+
+      .clanek{
+        margin: 0 auto;
+        grid-gap: 10px;
+        margin-top: 20px;
+        width: 80%;
+
+        img{
+          max-width: 50%;
+          float: left;
+          margin-right: 20px;
+        }
+
+        h4{
+          margin-top: 0px;
+        }
+      }
+    }
+
+    @include mQ(680px){
+      .clanek{
+        width: 100%;
+      }
+    }
+
+    @include mQ(560px){
+      .clanek{
+        display: block;
+        margin: 0 auto;
+        width: 320px;
+
+        img{
+            margin-right: 0px;
+            margin-bottom: 20px;
+            max-width: 100%;
+        }
+
+        h4{
+          font-size: 14pt;
+          text-align: center;
+          margin: 5px;
+          float: left;
+        }
+
+        & p:nth-child(4){
+          margin-bottom: 50px;
+          float: left;
+        }
+
+
+      }
+    }
+
+    @include mQ(380px){
+      .clanek{
+        width: 260px;
+
+        h4{
+          font-size: 12pt;
+          margin-bottom: 15px;
+        }
+
+        & p:nth-child(4){
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+
+  .odkaz{
+    grid-area: vice;
+    margin-top: 10px;
+
+    @include mQ(560px){
+      margin-top: -10px;
+    }
+  }
+}
+
+#news{
+  grid-template-areas:
+  ". clanek1 clanek1 clanek2 clanek2 clanek3 clanek3 .";
+
+  .clanek{
+    margin-left: auto;
+    margin-right: auto;
+    grid-gap: 10px;
+    width: 90%;
+
+    img{
+      width: 100%;
+    }
+
+    h4{
+      @include font($raleway, bolder, 12pt);
+      @include hover_a(1);
+      color: $red;
+    }
+
+    p{
+      color: $grey2;
+    }
+
+    & p:nth-child(3){
+      @include font(sans-serif , lighter, 9pt);
+    }
+
+    & p:nth-child(4){
+      @include font($raleway, lighter, 12pt);
+    }
+  }
+
+  .clanek:nth-child(1){ grid-area: clanek1; }
+  .clanek:nth-child(2){ grid-area: clanek2; }
+  .clanek:nth-child(3){ grid-area: clanek3; }
+}
+
+
+
+.down{
+  grid-template-areas:
+  ". . nav2 nav2 nav2 nav2 nav2 nav2 nav2 nav2 . ."
+  ". . . adresa adresa phone2 phone2 email email . . .";
+
+  nav{
+    grid-area: nav2;
+    @include main-menu(space-between, 30px, white, $grey5);
+    @include font($raleway, bold, 11pt);
+    border-bottom: solid 1px $darkgray;
+    margin-top: 25px;
+
+    ul{
+      width: 700px;
+      padding: 0px;
+      margin-left: auto;
+      margin-right: auto;
+      list-style-type: none;
+    }
+  }
+
+  &>div{
+    width: 220px;
+    margin-bottom: 25px;
+
+    a{
+      display: block;
+      margin-top: 32px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+
+  #adresa{
+    grid-area: adresa;
+    @include font($raleway, lighter, 10pt);
+    margin-left: auto;
+    margin-right: auto;
+
+    ul{
+      list-style: none;
+      margin-top: 19px;
+    }
+
+    div{
+      background-image: url(images/misto.png);
+      @include adjacent(56px, 56px, 100%);
+      margin-top: 15px;
+      margin-right: 10px;
+    }
+  }
+
+  #phone2{
+    grid-area: phone2;
+    display: block;
+    margin-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+    div{
+      background-image: url(images/phone2.png);
+      @include adjacent(56px, 56px, 100%);
+      margin-top: 15px;
+      margin-right: 10px;
+    }
+  }
+
+  #email{
+    grid-area: email;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    div{
+      background-image: url(images/mail2.png);
+      @include adjacent(56px, 56px, 100%);
+      margin-top: 15px;
+      margin-right: 10px;
+    }
+  }
+}
+
+
+
+
+
+footer{
+  grid-template-areas: ". . DEMO poski poski  poski poski poski poski poski . .";
+
+  &>*{
+    //background: green;
+    @include font($raleway, lighter, 8pt);
+    margin-top: 10px;
+    a, p{
+      color: white;
+    }
+  }
+
+  .DEMO{
+    grid-area: DEMO;
+    width: 100%;
+    text-align: center;
+  }
+
+  .poski{
+    grid-area: poski;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.poski{
+
+  &>div{
+  }
+
+  #poski{
+    display: block;
+    position: left;
+    width: 207px;
+    text-align: right;
+    //background: blue;
+
+    div{
+      background-image: url(images/poski_logo.png);
+      @include adjacent(29px, 29px, 80%);
+      margin-top: 6px;
+    }
+  }
+
+  #REAL{
+    margin-left: 20px;
+    width: 370px;
+    //background: blue;
+
+    div{
+      background-image: url(images/poski_real.png);
+      @include adjacent(28px, 25px, 80%);
+      margin-top: 7px;
+    }
+  }
+}
