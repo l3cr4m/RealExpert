@@ -185,7 +185,7 @@
       }
     }
 
-    @include mQ(560px){
+    @include mQ(570px){
 
       width: auto;
       height: 260px;
@@ -489,6 +489,7 @@ header nav{
   .nab{
     @include main-menu(flex-end, 100px, black, $red);
     @include font($raleway, 700, 12pt);
+    z-index: 2;
   }
 
   li{
@@ -953,7 +954,7 @@ section{
     @include mQ(700px){
       top: 230px;
 
-    @include mQ(560px){
+    @include mQ(565px){
       top: 330px;
 
       h1{
@@ -1046,7 +1047,6 @@ section{
 
     @include mQ(1580px){
       .carousel-cell{
-        background-image: url(images/billboard0M.jpg);
         width: 1562px;
       }
     }
@@ -1100,12 +1100,12 @@ section{
     .flickity-prev-next-button.previous {
       left: 0px;
       top: 250px;
-      z-index: 2;
+      z-index: 1;
     }
     .flickity-prev-next-button.next {
       right: 0px;
       top: 250px;
-      z-index: 2;
+      z-index: 1;
     }
 
 
