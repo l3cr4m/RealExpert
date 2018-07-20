@@ -15,6 +15,7 @@
 
       $('.client-container').flickity({
         wrapAround: true,
+        cellAlign: 'left',
         pageDots: false,
         arrowShape: {
           x0: 20,

@@ -1,5 +1,6 @@
 @mixin grid($amount...){
   display: grid;
+  grid-gap: 0px;
   grid-template-columns: repeat($amount, 1fr);
 
   @if $amount == 2 {

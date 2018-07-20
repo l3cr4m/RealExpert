@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-
 <html lang="zxx">
+
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,800,900|Roboto:100,400&subset=cyrillic,cyrillic-ext,latin-ext');
+</style>
   <head>
     <title>RealExpert</title>
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
   </head>
   <body>
     <div id="content">
@@ -68,13 +71,13 @@
       <!-- start homepage content -->
 
       <section>
-        <div class="billboard">
+        <div class="billboard" style="position:relative; z-index: 1">
           <div class="hlavni-nadpis">
             <h1>Rozjeďte své podnikání s<br><span>RealExpertem</span></h1>
             <p>a staňte se i Vy silným partnerem<br>v oblasti nemovitosti</p>
             <div class="button"><button type="button" name="button">CHCI SE STÁT MAKLÉŘEM</button></div>
           </div>
-          <div class="billboard-container">
+          <div class="billboard-container" style="position:relative; z-index: 1">
             <div class="carousel-cell">
             </div>
 
@@ -86,8 +89,8 @@
           </div>
         </div>
 
-        <div class="hledani">
-            <div id="hledani">
+        <div class="hledani" style="position:relative; z-index: 1">
+            <div id="hledani" style="position:relative; z-index: 2">
               <nav>
                 <ul>
                   <li><a href="https://www.poski.com/"><p>DOMY</p></a></li>
@@ -112,18 +115,22 @@
               </nav>
 
               <div class="hled">
-                <div class="hledani1">
-                  <img src="images/logo2.png" alt="logo">
-                  <div>
-                    <h3><span>Prodat</span> nemovitost</h3>
-                    <p>s RealExpertem</p>
+                <div class="pro">
+                  <div class="hledani1">
+                      <a href="">
+                        <img src="images/logo2.png" alt="logo">
+                        <h3><span>Prodat</span> nemovitost</h3>
+                        <p>s RealExpertem</p>
+                      </a>
                   </div>
-                </div>
 
-                <div class="hledani1">
-                  <img src="images/logo2.png" alt="logo">
-                  <h3><span>Pronajmout</span> nemovitost</h3>
-                  <p>s RealExpertem</p>
+                  <div class="hledani1">
+                    <a href="">
+                      <img src="images/logo2.png" alt="logo">
+                      <h3><span>Pronajmout</span> nemovitost</h3>
+                      <p>s RealExpertem</p>
+                    </a>
+                  </div>
                 </div>
 
                 <div class="img">
@@ -309,28 +316,31 @@
           <div id="proc">
             <div class="nadpis"><h3>A proč si vybrat RealExpert</h3></div>
 
-            <div class="jsme">
-              <p>11<span>let</span></p>
-              <h4>JSME S VÁMI</h4>
-            </div>
+            <div class="conteiner">
+              <div class="jsme">
+                <p>11<span>let</span></p>
+                <h4>JSME S VÁMI</h4>
+              </div>
 
-            <div class="serveru">
-              <p>696</p>
-              <h4>JE POČET SERVERŮ,<br>KDE INZERUJEME</h4>
-            </div>
+              <div class="serveru">
+                <p>696</p>
+                <h4>JE POČET SERVERŮ,<br>KDE INZERUJEME</h4>
+              </div>
 
-            <div class="spokojenych">
-              <p><span>přes</span>3000</p>
-              <h4>SPOKOJENÝCH<br>KLIENTŮ</h4>
-            </div>
+              <div class="spokojenych">
+                <p><span>přes</span>3000</p>
+                <h4>SPOKOJENÝCH<br>KLIENTŮ</h4>
+              </div>
 
-            <div class="prodanych">
-              <p>2,8<span>mld. Kč</span></p>
-              <h4>ODPOVÍDÁ HODNOTĚ<br>PRODANÝCH NEMOVITOSÍ</h4>
+              <div class="prodanych">
+                <p>2,8<span>mld. Kč</span></p>
+                <h4>ODPOVÍDÁ HODNOTĚ<br>PRODANÝCH NEMOVITOSÍ</h4>
+              </div>
             </div>
           </div>
 
           <div id="nabor">
+
             <div class="woman">
               <div class="nadpis2">
                 <h3>Rozjeďte své podnikání s<br><span>RealExpertem</span></h3>
@@ -340,7 +350,6 @@
               <div class="button">
                 <button type="button" name="button">CHCI SE STÁT MAKLÉŘEM</button>
               </div>
-
             </div>
 
             <div class="for">
